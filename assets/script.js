@@ -6,12 +6,6 @@ let choiceB = document.getElementById('B');
 let choiceC = document.getElementById('C');
 let choiceD = document.getElementById('D');
 
-// bank of variables that we will mess with as we go through the solution
-let scoreCounter = 0;
-let isCorrect = false;
-let timer;
-let timerCount;
-
 // question bank 
 let questions = [
 
@@ -27,7 +21,7 @@ let questions = [
 
       choiceD : "all of the above",
 
-      correct : "D",
+      correct : "all of the above",
 
   },{
 
@@ -41,10 +35,10 @@ let questions = [
 
     choiceD : "operator",
 
-    correct : "B",
+    correct : "variable",
 
   },{
-
+    // change correct to the actual answer for all questions below
     question : "What part of the following statement is called a declaration? let x = 42",
 
     choiceA : "let",
@@ -102,6 +96,27 @@ let questions = [
   }
 ];
 
+// bank of variables that we will mess with as we go through the solution
+let scoreCounter = 0;
+let isCorrect = false;
+let timer;
+let timerCount;
+let questionIndex = 0;
+let currentQuestion;
+
+function displayQuestion() {
+  let currentQuestion = questions [questionIndex];
+  question.innerHTML = currentQuestion.question;
+
+  console.log(currentQuestion.question);
+}
+
+function nextQuestion() {
+  // ensure question index goes back to 0 
+  questionIndex++;
+  displayQuestion();
+}
+
 function init() {
   getScores();
 }
@@ -113,6 +128,7 @@ function startQuiz() {
   // prevents start button from being clicked when round is in progress
   startButton.disabled = true;
   startTimer();
+  displayQuestion();
 }
 
 function correct() {
@@ -120,6 +136,7 @@ function correct() {
   scoreCounter++;
   startButton.disabled = false;
   setScore();
+  nextQuestion();
 }
 
 function timeUp() {
@@ -150,3 +167,4 @@ function startTimer() {
 
 // attach event listener to start button to call startGame function on click
 startButton.addEventListener('click', startQuiz);
+displayQuestion();
