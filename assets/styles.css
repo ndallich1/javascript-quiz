@@ -1,0 +1,72 @@
+* {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+header {
+  margin: 0px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #0d6efd;
+  color: white;
+}
+
+nav {
+  align-items: baseline;
+}
+
+h1 {
+  order: 2;
+  align-items: baseline;
+}
+
+div.quiz-objects {
+  order: 1;
+}
+
+div.card.timer {
+  order: 3;
+  margin: 0;
+  padding: 0;
+  align-items: baseline;
+  background-color: #10006d;
+}
+
+h2 {
+  margin: 10px;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+}
+
+main {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d6d6d6;
+}
+
+div.card.w-100 {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+h5.card-title {
+  color: #0d6efd;
+  font-weight: 300;
+}
+
+p.card-text {
+  font-weight: 900;
+}
+
+.justify-content-start {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  text-align: left;
+}
