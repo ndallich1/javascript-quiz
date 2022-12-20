@@ -106,9 +106,8 @@ let currentQuestion;
 
 function displayQuestion() {
   let currentQuestion = questions [questionIndex];
-  question.innerHTML = currentQuestion.question;
-
-  console.log(currentQuestion.question);
+  question.textContent = currentQuestion;
+  console.log(currentQuestion);
 }
 
 function nextQuestion() {
@@ -167,4 +166,3 @@ function startTimer() {
 
 // attach event listener to start button to call startGame function on click
 startButton.addEventListener('click', startQuiz);
-displayQuestion();
